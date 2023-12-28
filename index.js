@@ -83,6 +83,21 @@ router.hooks({
             done();
           });
         break;
+      case "Bio":
+        // New Axios get request utilizing already made environment variable
+        axios
+          .get(`https://randomuser.me/api/?seed=foobar`)
+          .then(response => {
+            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+            console.log("response", response);
+            store.Bio.profiles = response.data;
+            done();
+          })
+          .catch(error => {
+            console.log("It puked", error);
+            done();
+          });
+        break;
       default:
         done();
     }
