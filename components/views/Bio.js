@@ -31,6 +31,5 @@ export default state => html`
       tellus. Suspendisse gravida neque in urna congue bibendum. Duis dui odio,
       pharetra nec odio ac, ornare vulputate nibh.
     </p>
-    <div>${state.profiles}</div>
   </section>
 `;
